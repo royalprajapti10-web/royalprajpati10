@@ -1,33 +1,35 @@
-# My Cashbook (offline-first Android-friendly app)
+# संस्था श्री सक्ष — Offline Cashbook
 
-A lightweight installable web app for personal income/expenses and business customer khata. Interface supports Hindi and English. Records are stored locally in the browser on the device.
+A mobile-friendly installable Progressive Web App (PWA) for managing separate institutions/businesses, cash-in, cash-out, opening balances, current balances, date-filtered entries and reports. Hindi and English are supported.
 
 ## Features
-- Dashboard with income, expense, and net balance
-- Income, expense, udhar given, and udhar received transactions
-- Customer list, phone field, customer balance, and transaction history
-- Search and filter transaction history
-- Today / this month / all-time reports
-- Export CSV and JSON backup; restore JSON backup
-- Hindi/English toggle
-- Service worker cache for offline use after the first successful load
+- Starts with an institution named **संस्था श्री सक्ष**
+- Create multiple institutions; each institution has separate records and balances
+- Opening balance for each institution
+- Cash In / Cash Out entries with amount, date, description, person/party and payment mode
+- Automatic total cash-in, total cash-out and remaining balance calculations
+- Search entries and filter by type and date range
+- Today / this month / all-time summaries
+- CSV report export and JSON backup/restore
+- Local storage; no account or cloud required
+- PWA manifest and service worker for installation and offline app shell
 
-## Install on Android (recommended: install as an app)
-1. Upload the contents of this folder to a static HTTPS host. Examples: GitHub Pages or another static web host. Keep all files in the same folder.
-2. Open the hosted `index.html` URL in Chrome on Android while online.
-3. In Chrome, open the ⋮ menu and choose **Install app** or **Add to Home screen**. The exact wording depends on your Chrome version.
-4. Launch **My Cashbook** from your home screen. After the first load and service-worker caching, the app shell can open offline.
-5. Make a JSON backup regularly using **Export backup** and store it somewhere safe.
+## Update your existing GitHub Pages app from Android
+1. Open the GitHub repository where the current app is published.
+2. For each file below, open the file in the repository, tap the pencil/edit menu or upload replacement file, replace it with the file from this folder, and commit the change:
+   - `index.html`
+   - `manifest.webmanifest`
+   - `sw.js`
+   - `icon.svg`
+   - `icon-192.png`
+   - `icon-512.png`
+3. Make sure all these files are at the repository root, next to each other (not inside an extra folder).
+4. Wait for GitHub Pages to deploy, then open your same Pages URL in Chrome.
+5. If the old version remains: Chrome > Settings > Site settings > All sites > your GitHub Pages site > Clear & reset, then reopen the site online. **Export a backup first if you have entered records.**
+6. If already installed, launch it while online once to let the new service worker update. If necessary remove the old home-screen shortcut and install again from Chrome's menu.
 
-## Important offline/data notes
-- This package is a Progressive Web App (PWA), not a signed native APK. Android Chrome can install it to the home screen.
-- A service worker requires HTTPS (or localhost); opening `index.html` directly from a file manager will not enable PWA installation/offline caching.
-- The data is kept in local browser storage. It does not sync to other devices. Clearing Chrome/site data, uninstalling, or device failure may remove records. Export backups regularly.
-- This starter app is not encrypted and has no login/PIN. Do not use it to store sensitive financial information on a shared phone.
-- Income and “udhar received” increase the calculated net balance; expenses and “udhar given” decrease it. Customer balance is based only on udhar given minus udhar received.
-
-## Files
-- `index.html` — app UI and logic
-- `manifest.webmanifest` — install metadata
-- `sw.js` — offline app-shell cache
-- `icon.svg`, `icon-192.png`, `icon-512.png` — app icons
+## Important data notes
+- Data is stored locally in the browser/device, not on GitHub or in a cloud database.
+- Do not clear browser/site data or uninstall before exporting a JSON backup.
+- GitHub Pages files are public if the repository is public; your financial records are not uploaded to GitHub by this app.
+- This is a PWA, not a native APK. It can be installed to the Android home screen from Chrome over HTTPS.

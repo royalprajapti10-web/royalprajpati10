@@ -1,13 +1,13 @@
 {
-  "name": "My Cashbook",
-  "short_name": "Cashbook",
-  "description": "Offline personal and business cashbook in Hindi and English",
+  "name": "संस्था श्री सक्ष",
+  "short_name": "श्री सक्ष",
+  "description": "संस्था का ऑफलाइन कैशबुक — जमा, खर्च और बाकी राशि",
+  "lang": "hi-IN",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#f5f6f8",
-  "theme_color": "#b91c1c",
+  "background_color": "#f5f6f9",
+  "theme_color": "#8f1537",
   "icons": [
     {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
     {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
