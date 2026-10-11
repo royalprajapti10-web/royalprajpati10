@@ -1,15 +1,23 @@
 {
-  "name": "संस्था श्री सक्ष",
-  "short_name": "श्री सक्ष",
-  "description": "संस्था का ऑफलाइन कैशबुक — जमा, खर्च और बाकी राशि",
-  "lang": "hi-IN",
-  "start_url": "./index.html",
+  "name": "संस्था श्री सक्षम",
+  "short_name": "संस्था श्री सक्षम",
+  "description": "संस्था का ऑफलाइन कैशबुक",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f5f6f9",
   "theme_color": "#8f1537",
+  "lang": "hi",
   "icons": [
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
