@@ -1,18 +1,10 @@
 # संस्था श्री सक्षम
 
-- Multiple institutions with separate cash-in/cash-out transactions.
-- Automatic total in, total out, opening balance and remaining balance.
-- Hindi/English UI, offline device storage, JSON backup/restore and CSV report.
-- Excel (`.xlsx`, `.xls`) and CSV import. Reads the first worksheet and recognizes common English/Hindi headings for amount, date, type, description, party and payment mode.
-- Uses the uploaded logo artwork for app icons.
+Updated offline-first cashbook PWA.
 
-## Import older Excel records
-1. Select the institution where records should be imported.
-2. Open Home → Backup & Data → Excel आयात करें.
-3. Select an Excel/CSV file and confirm the number of rows.
-4. Check totals and export a backup afterwards.
+Features: separate institutions, cash in/out, balance summary, edit/delete entries, black-and-gold theme, logo icon, Hindi/English, CSV and JSON backup, Excel/CSV import.
 
-The Excel reader loads from jsDelivr, so internet is needed once to load the library when importing Excel. Normal cashbook use remains offline after the app is cached.
+## GitHub Pages update (mobile)
+Upload the *contents* of this folder to the repository root and replace same-named files. Commit changes, then wait for GitHub Pages to deploy. Existing local records are kept in browser localStorage when the same website origin and storage remain unchanged. Export a JSON backup before updating.
 
-## GitHub Pages
-Upload all files from this folder directly to repository root, replacing old files. Do not upload only the ZIP. In Settings → Pages, select `main` and `/(root)`.
+Excel import loads SheetJS from a CDN and therefore needs internet for that library on first use.
