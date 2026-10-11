@@ -1,18 +1,9 @@
 # संस्था श्री सक्षम
 
-- Multiple institutions with separate cash-in/cash-out transactions.
-- Automatic total in, total out, opening balance and remaining balance.
-- Hindi/English UI, offline device storage, JSON backup/restore and CSV report.
-- Excel (`.xlsx`, `.xls`) and CSV import. Reads the first worksheet and recognizes common English/Hindi headings for amount, date, type, description, party and payment mode.
-- Uses the uploaded logo artwork for app icons.
+Black-and-gold offline-first Hindi/English cashbook PWA. Includes entry editing/deleting, party-first bold display, custom circular logo upload, cash-in/out totals, CSV report, JSON backup/restore, Excel import (first worksheet, XLSX library requires internet once), share report summary, email draft, and notification permission test.
 
-## Import older Excel records
-1. Select the institution where records should be imported.
-2. Open Home → Backup & Data → Excel आयात करें.
-3. Select an Excel/CSV file and confirm the number of rows.
-4. Check totals and export a backup afterwards.
+## Publish
+Upload the CONTENTS of this folder to the root of your GitHub repository, replacing files with matching names. Commit changes and ensure GitHub Pages uses branch `main` and folder `/(root)`.
 
-The Excel reader loads from jsDelivr, so internet is needed once to load the library when importing Excel. Normal cashbook use remains offline after the app is cached.
-
-## GitHub Pages
-Upload all files from this folder directly to repository root, replacing old files. Do not upload only the ZIP. In Settings → Pages, select `main` and `/(root)`.
+## Important limitations
+Records are local to one browser/device. The role dropdown is only a local preference, not secure access control. True per-email operator/viewer permissions, shared multi-device data, automated email/WhatsApp file sending, and reliable background notifications need a secure backend and authentication. WhatsApp/email sharing opens the relevant app; attachments may need to be selected manually.
