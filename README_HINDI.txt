@@ -1,31 +1,22 @@
-संस्था श्री सक्षम — Login और दूसरे मोबाइल पर एक ही डेटा
+संस्था श्री सक्षम — अपडेटेड फाइलें
 
-ज़रूरी बात: सिर्फ GitHub पर ZIP upload करने से app update नहीं होती। ZIP को Extract करके उसके अंदर की files repository के ROOT में upload/replace करनी हैं।
+इस अपडेट में:
+1. Account टैब: Login email, Supabase User ID, login status, User ID copy और Logout.
+2. संस्था का नाम बदलने का फॉर्म.
+3. Logo crop: image चुनने के बाद zoom, horizontal और vertical crop adjust करके Apply Logo.
+4. Service worker cache v4, ताकि पुरानी app file अटकने की समस्या कम हो.
+5. बाकी cashbook, report, backup और Excel import features बनाए रखे हैं.
 
-फाइलें root में ऐसी दिखनी चाहिए:
-index.html
-config.js
-manifest.webmanifest
-sw.js
-icon.svg
-icon-192.png
-icon-512.png
-logo-round.png
-supabase_setup.sql
+GitHub Pages पर अपडेट करने के चरण:
+1. पहले मौजूदा app का JSON backup डाउनलोड करें (Home > Backup & data > Download backup).
+2. ZIP extract करें और सभी updated files upload करें, लेकिन config.js को बिना जांचे overwrite न करें.
+3. अपने GitHub repository के मौजूदा config.js में जो Supabase URL और public anon key पहले से सही हैं, उन्हें जस का तस रखें.
+4. Supabase Dashboard > SQL Editor में supabase_setup.sql चलाएँ, अगर पहले नहीं चलाया है.
+5. GitHub Pages URL Chrome में खोलें और internet के साथ refresh करें. फिर installed app बंद करके दोबारा खोलें.
 
-CLOUD LOGIN चालू करने के लिए Supabase setup अनिवार्य है:
-1) https://supabase.com पर account बनाएं और New project बनाएं।
-2) Project Settings > API से Project URL और anon/public key copy करें। service_role key कभी इस्तेमाल न करें।
-3) GitHub repository में config.js खोलें और YOUR_SUPABASE_PROJECT_URL तथा YOUR_SUPABASE_ANON_KEY को अपनी values से बदलें। Save/Commit करें।
-4) Supabase Dashboard > SQL Editor > New query में supabase_setup.sql का पूरा code paste करके Run करें।
-5) Supabase Authentication URL Configuration में Site URL अपनी प्रकाशित GitHub Pages URL रखें।
-6) GitHub Pages URL को https से खोलें। Sign up करें, email verification आए तो verify करें, फिर login करें।
-7) दूसरे फोन में वही वेबसाइट और वही account login करें।
-
-अगर config.js में placeholders हैं, login form चालू नहीं होगा। यह सुरक्षित रूप से cloud setup की प्रतीक्षा करेगा।
-
-ध्यान दें:
-- Public/anon key browser में इस्तेमाल करने के लिए है। service_role key कभी वेबसाइट/ZIP में न डालें।
-- प्रत्येक account का अपना private data है। अलग operator/viewer accounts के लिए institution sharing/membership roles अभी अलग backend feature है।
-- पुराना data हो तो पहले app से JSON backup export करें।
-- Cloud login/sync के लिए internet चाहिए; offline किए गए बदलावों का automatic merge अभी guarantee नहीं है।
+महत्वपूर्ण सुरक्षा सीमा:
+- इस update में Account tab, rename और adjustable logo crop शामिल हैं.
+- चार अलग लोगों को अलग-अलग permission देना (owner/admin, viewer आदि) अभी पूरा secure team-sharing feature नहीं है. सिर्फ local role dropdown सुरक्षा नहीं देता. इसे चालू करने के लिए database membership tables/RLS और app में per-institution sharing integration अलग से लागू करना होगा.
+- किसी को अपना Supabase service_role key कभी न दें. config.js में केवल project URL और public anon/publishable key ही हो.
+- User ID कोई password नहीं है; password अलग और निजी रखें.
+- अपना मौजूदा config.js बचाकर रखें. इस ZIP में config.js template placeholders के साथ है.
