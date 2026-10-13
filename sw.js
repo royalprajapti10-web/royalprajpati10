@@ -1,4 +1,4 @@
-const CACHE = 'sanstha-shri-saksh-v5';
+const CACHE = 'sanstha-shri-saksh-v6';
 const ASSETS = ['./', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png', './logo-round.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
